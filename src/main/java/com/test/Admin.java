@@ -1,9 +1,15 @@
 package com.test;
 
+
+import org.springframework.stereotype.Component;
+
 public class Admin {
 
     private String username;
     private String password;
+
+    public Admin() {
+    }
 
     public Admin(String username, String password) {
         this.username = username;
@@ -31,5 +37,13 @@ public class Admin {
         Admin admin = (Admin) obj;
         return this.username.equals(admin.username) &&
                 this.password.equals(admin.password);
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

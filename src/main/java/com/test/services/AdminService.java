@@ -29,7 +29,8 @@ public class AdminService {
         return jdbc.queryForObject("select * from admin WHERE id = 0", params, new RowMapper<Admin>() {
             @Override
             public Admin mapRow(ResultSet resultSet, int i) throws SQLException {
-                Admin admin = new Admin(resultSet.getString("username"), resultSet.getString("password"));
+                Admin admin = null;
+                admin = new Admin(resultSet.getString("username"), resultSet.getString("password"));
                 return admin;
             }
         });
